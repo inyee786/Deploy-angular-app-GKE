@@ -25,3 +25,32 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+# Deploy your Angular app on Google Kubernetes Engine(GKE) with the help of docker tarvis nginx
+
+you are here, so i will assume that that you know about Angular,Kuberntes(micro services),Docker and Travis
+
+
+create Angular App
+
+```ng new your-app-name```
+
+Build your app for production
+
+```ng build --prod ```
+
+# Write DockerFile for Angualr App
+
+   ```
+      FROM nginx:1.13
+      COPY  dist/ /usr/share/nginx/html
+      EXPOSE 80
+   ```
+      
+"From nginx:1.13" it means that we are taking the nginx image from dockerhub, "COPY  dist/ /usr/share/nginx/html" it means that we are putting the production file inside the nginx/html folder, "EXPOSE 80" we are exposing the port 80 for outside checking the container
+
+
+
+
