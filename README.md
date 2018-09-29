@@ -1,3 +1,5 @@
+[![Build Status](https://app.codeship.com/projects/795fc650-a62b-0136-a66a-2ac20198919e/status?branch=master)]
+
 # DeployAngularAppGKE
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
