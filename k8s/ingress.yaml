@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: angular-ingress
+ namespace: example-namespaces
+ annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /
+   kubernetes.io/tls-acme: "true"
+spec:
+ tls:
+ - hosts:
+   - example.domainname.com
+   secretName: angular-secret-ingress
+ rules:
+ - host: example.domainname.com
+   http:
+     paths:
+     - path: /
+       backend:
+         serviceName: angular-service
+         servicePort: 80
